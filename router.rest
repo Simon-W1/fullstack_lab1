@@ -1,0 +1,23 @@
+GET http://localhost:3000/api/users
+
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{"name": "uyfgh"}
+
+###
+
+GET http://localhost:3000/api/users/624c3029508e9e703ecf4564
+
+###
+
+PUT http://localhost:3000/api/users/624c3029508e9e703ecf4564
+Content-Type: application/json
+
+{"name": "1234"}
+
+###
+
+DELETE http://localhost:3000/api/users/624c304b508e9e703ecf4569
