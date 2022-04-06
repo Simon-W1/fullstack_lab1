@@ -5,7 +5,10 @@ GET http://localhost:3000/api/users
 POST http://localhost:3000/api/users
 Content-Type: application/json
 
-{"name": "uyfgh"}
+{
+    "name": "uyfgh",
+    "age": 22
+}
 
 ###
 
@@ -13,11 +16,14 @@ GET http://localhost:3000/api/users/624c3029508e9e703ecf4564
 
 ###
 
-PUT http://localhost:3000/api/users/624c3029508e9e703ecf4564
+PUT http://localhost:3000/api/users/624c5e651367700b4a37ea5b
 Content-Type: application/json
 
-{"name": "1234"}
+{
+    "name": "123",
+    "age": "11"
+}
 
 ###
 
-DELETE http://localhost:3000/api/users/624c304b508e9e703ecf4569
+DELETE http://localhost:3000/api/users/624c7390362075303a5c68f0

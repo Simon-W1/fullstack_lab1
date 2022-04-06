@@ -18,4 +18,4 @@ app.use("/api/users", users)
 
 app.listen(PORT, () => {
     console.log("Server has started!")
-    })
+})

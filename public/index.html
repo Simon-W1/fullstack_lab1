@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
+
+<body id="page">
+    <h1>Create new user</h1>
+    <form id="registerUser">
+        <div>
+            <label for="registerName">Name:</label>
+            <input type="text" id="registerName">
+        </div>
+        <div>
+            <label for="registerAge">Age:</label>
+            <input type="text" id="registerAge">
+        </div>
+        <button type="text" class="submit">Submit</button>
+        <p id="registerError"></p>
+    </form>
+    <h1>Update a user</h1>
+    <div>
+        <label for="updateName">Name:</label>
+        <input type="text" id="updateName">
+    </div>
+    <div>
+        <label for="updateAge">Age:</label>
+        <input type="text" id="updateAge">
+    </div>
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+    <p id="userId"></p>
+    <p id="updateError"></p>
 </body>
+<script src="script.js"></script>
+
 </html>
