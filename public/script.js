@@ -31,7 +31,6 @@ window.onload = function initialize() {
     })
     .then(res => res.json())
     .then(response => {
-        console.log(JSON.stringify(response))
         for (var i = 0; i < response.length; i++) {
             var user = response[i]
             var row = table.insertRow(-1)
@@ -61,7 +60,7 @@ window.onload = function initialize() {
     })
 }
 
-table.addEventListener("click", (e) => {
+table.addEventListener("click", e => {
     var element = e.target
     if (element.type == "button") {
         var rowNr = element.id.charAt(3)
@@ -77,9 +76,20 @@ table.addEventListener("click", (e) => {
                 userId.innerHTML = "User id: " + id
             } else if (action == 2) {
                 //Update
-                const updateDetails = {
-                    name: updateName.value,
-                    age: updateAge.value
+                var updateDetails
+                if (updateName.value == "") {
+                    updateDetails = {
+                        age: updateAge.value
+                    }
+                } else if (updateAge.value == "") {
+                    updateDetails = {
+                        name: updateName.value 
+                    }
+                } else {
+                    updateDetails = {
+                        name: updateName.value,
+                        age: updateAge.value
+                    }
                 }
                 fetch("api/users/" + id, {
                     method: "PUT",
@@ -89,10 +99,12 @@ table.addEventListener("click", (e) => {
                     body: JSON.stringify(updateDetails)
                 })
                 .then(response => {
-                    if (!response.ok) {
-                        updateError.innerHTML = "Both fields must be filled to update a user."
-                    } else {
-                        location.reload()
+                    if (updateName != "" || updateAge != "") {
+                        if (!response.ok) {
+                            updateError.innerHTML = "One field must be filled to update a user."
+                        } else {
+                            location.reload()
+                        }
                     }
                 })
             } else if (action == 3) {
